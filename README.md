@@ -50,24 +50,32 @@ DataBinding优势： 1.不用findViewById();
        
        
    《3》ListView或者GridView的data模型示例如下：
+   
+   
            <data>
                <variable
                    name="adapter"
                    type="android.widget.BaseAdapter">
                 </variable>
            </data>
+           
           ListView在布局中写法如下：
               <ListView
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       app:adapter="@{ adapter }">
               </ListView>
+              
+              
+              
+              
         RecyclerView的data模型示例如下
             <data>
                 <variable
                    name="adapter"
                    type="android.support.v7.widget.RecyclerView.Adapter"></variable>
             </data>
+            
             RecyclerView在布局中写法如下：
            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -76,7 +84,12 @@ DataBinding优势： 1.不用findViewById();
                 app:adapter="@{ adapter }"
            >
            </android.support.v7.widget.RecyclerView>
+           
+           
+           
 完整结构示意如下：
+
+
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
   <!--填充数据的对象以及引入路径-->
@@ -88,6 +101,7 @@ DataBinding优势： 1.不用findViewById();
             type="....">  <!--填充数据的对象具体路径路径-->
         </variable>
     </data>
+    
   <!--显示数据的view视图，由以前学过的五大布局以及控件完成,示例如下:-->
     <LinearLayout ....>
        <TextView..../>
@@ -95,6 +109,9 @@ DataBinding优势： 1.不用findViewById();
        <!--控件内容填充格式如右:@{对象名.变量名}-->
     </LinearLayout>
 </layout>
+
+
+
 《4》单个控件的点击事件setOnClickListener/setOnLongClickListener如下说明：
 指定对象的点击方法在对于的实体类中声明，其中参数和返回值需和指定的监听事件类型一致；
 在xml指定控件的调用如：android:onClick="@{对象名.方法名}" android:onLongClick="{对象名.方法名}"
@@ -110,7 +127,9 @@ ActivityMainBinding activityMainBinding =
 3》加载网络图片： 思路：由于图片设置的内容都是drawable类型，但网络图片是一个字符串地址，
                   所以布局文件中使用自定义属性设置，具体操作如下：
 
+
  1.书写加载图片的工具类，具体如下：
+ 
  备注:ImageView已经和model的url绑定了，比如说：请求接口时，当请求完成时，拿到所需的图片url，
                                     通过model.setXX("图片地址")，这时ImageView上的图片就会自动变化。
 
@@ -124,6 +143,8 @@ ActivityMainBinding activityMainBinding =
                        .into(imageView);
            }
         }
+
+
 
 BindingAdapter的含义：1、它是一个注解关键词；
                       2、他是用来标记的方法的；
