@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rounded="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="person"
+            type="com.dxt2.databingdemoo.bean.Person"></variable>
+    </data>
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="@{person.clickName}"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:scaleType="fitXY"
+            app:imageUrl="@{person.icon}"
+            rounded:riv_border_color="@color/colorPrimary"
+            rounded:riv_border_width="1dp"
+            rounded:riv_corner_radius="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@{person.name}" />
+    </android.support.v7.widget.CardView>
+</layout>
