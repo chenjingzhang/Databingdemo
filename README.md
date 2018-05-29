@@ -6,6 +6,8 @@ DataBinding优势： 1.不用findViewById();
                   2.将数据分解到各个view
                   3.在UI线程上更新数据
                   4.监控数据的变化，实时更新
+                           
+                  
 1.配置：
 打开Module下的build.gradle文件，在android标签中添加如下话语：
  dataBinding{
@@ -22,6 +24,8 @@ DataBinding优势： 1.不用findViewById();
                   </variable>
              </data>
       给控件赋值引用值：@{对象名.变量名}
+      
+      
   《2》多个对象使用集合传递：
    例如：  <data>
                 <import type="对象所在类的具体位置"></import>
@@ -31,6 +35,9 @@ DataBinding优势： 1.不用findViewById();
                 </variable>
             </data>
      备注：
+                  
+                  
+                  
      /**
        *以下是XML中需要的转义字符:[/size]
        * &(逻辑与)  &amp;       
@@ -39,6 +46,9 @@ DataBinding优势： 1.不用findViewById();
        * "(双引号)  &quot;     
        * '(单引号)  &apos; [/size]
        */
+       
+       
+       
    《3》ListView或者GridView的data模型示例如下：
            <data>
                <variable
